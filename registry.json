@@ -9,6 +9,7 @@
       "description": "查询城市天气：优先使用用户配置的 OpenWeather 密钥，未配置时自动降级到免密钥的 Open-Meteo",
       "author": "Cyrene 示例",
       "deps": ["secrets"],
+      "zip": "zips/weather-tool-0.1.0.zip",
       "homepage": "https://github.com/Playa-0v0/Cyrene-Agent/tree/master/examples/weather-tool"
     },
     {
@@ -18,6 +19,7 @@
       "description": "监听轮次结束事件，自动摘要对话并存档，把长期记忆注入下一轮上下文",
       "author": "Cyrene 示例",
       "deps": ["llm", "conversations"],
+      "zip": "zips/long-term-memory-0.1.0.zip",
       "homepage": "https://github.com/Playa-0v0/Cyrene-Agent/tree/master/examples/long-term-memory"
     },
     {
@@ -27,6 +29,7 @@
       "description": "通过对话创建、管理自己的定时任务（创建后需在宿主界面确认启用）",
       "author": "Cyrene 示例",
       "deps": ["scheduler"],
+      "zip": "zips/scheduled-automation-0.1.0.zip",
       "homepage": "https://github.com/Playa-0v0/Cyrene-Agent/tree/master/examples/scheduled-automation"
     },
     {
@@ -36,6 +39,7 @@
       "description": "演示语音输入租约契约：接管输入、提交识别文本、释放归还。使用模拟识别文本，不含模型与推理运行时",
       "author": "Cyrene 示例",
       "deps": ["speech-input"],
+      "zip": "zips/local-asr-contract-0.1.0.zip",
       "homepage": "https://github.com/Playa-0v0/Cyrene-Agent/tree/master/examples/local-asr-contract"
     }
   ]

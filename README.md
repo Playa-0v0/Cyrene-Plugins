@@ -10,25 +10,25 @@ Cyrene 昔涟官方插件收录仓库：开发者通过 Pull Request 提交插�
 
 ## 已收录插件
 
-| 插件 | 版本 | 简介 | 宿主能力 |
+| 插件 | 版本 | 简介 | 直接下载 |
 | --- | --- | --- | --- |
-| [weather-tool](./plugins/weather-tool) | 0.1.0 | 查询城市天气：优先使用用户配置的 OpenWeather 密钥，未配置时自动降级到免密钥的 Open-Meteo | secrets |
-| [long-term-memory](./plugins/long-term-memory) | 0.1.0 | 监听轮次结束事件，自动摘要对话并存档，把长期记忆注入下一轮上下文 | llm、conversations |
-| [scheduled-automation](./plugins/scheduled-automation) | 0.1.0 | 通过对话创建、管理自己的定时任务（创建后需在宿主界面确认启用） | scheduler |
-| [local-asr-contract](./plugins/local-asr-contract) | 0.1.0 | 本地语音识别契约示例：演示语音输入租约的获取、提交与释放 | speech-input |
+| [weather-tool](./plugins/weather-tool) | 0.1.0 | 查询城市天气：优先使用用户配置的 OpenWeather 密钥，未配置时自动降级到免密钥的 Open-Meteo | [ZIP](./zips/weather-tool-0.1.0.zip) |
+| [long-term-memory](./plugins/long-term-memory) | 0.1.0 | 监听轮次结束事件，自动摘要对话并存档，把长期记忆注入下一轮上下文 | [ZIP](./zips/long-term-memory-0.1.0.zip) |
+| [scheduled-automation](./plugins/scheduled-automation) | 0.1.0 | 通过对话创建、管理自己的定时任务（创建后需在宿主界面确认启用） | [ZIP](./zips/scheduled-automation-0.1.0.zip) |
+| [local-asr-contract](./plugins/local-asr-contract) | 0.1.0 | 本地语音识别契约示例：演示语音输入租约的获取、提交与释放 | [ZIP](./zips/local-asr-contract-0.1.0.zip) |
 
 ---
 
 ## 用户：如何安装插件
 
-1. 打开插件目录（如 [plugins/weather-tool](./plugins/weather-tool)）
-2. 点击页面右上角绿色 **Code** 按钮 → **Download ZIP**；或直接下载 `manifest.json` 与 `index.cjs` 两个文件后自行压缩为 ZIP
-3. 在 Cyrene 中打开 **设置 → 插件 → 导入 ZIP**，选择下载的压缩包
-4. 安装完成后在插件列表中**手动启用**
+1. 在上方表格点击插件对应的 **ZIP** 链接直接下载（也可进入 `zips/` 目录选择）
+2. 在 Cyrene 中打开 **设置 → 插件 → 导入 ZIP**，选择下载的压缩包
+3. 安装完成后在插件列表中**手动启用**
 
 说明：
 
-- ZIP 内应是插件目录本身（包含 `manifest.json` 和入口文件），不要多层嵌套
+- `zips/` 中的压缩包由维护者从审核过的 `plugins/` 源码统一打包，与源码目录一一对应
+- 想查看插件源码：进入对应 `plugins/<插件id>/` 目录
 - 用户插件首次安装后默认停用，启用后才会生效
 - 插件更新：重新导入新版 ZIP 即可，插件数据（存储、密钥）不会丢失
 
@@ -42,6 +42,8 @@ Cyrene 昔涟官方插件收录仓库：开发者通过 Pull Request 提交插�
 2. 把**可直接安装的产物**（`manifest.json` + 编译后的入口文件）放进 `plugins/<你的插件id>/` 目录
 3. 在 `registry.json` 中登记插件信息
 4. 提交 Pull Request，等待安全审核（审核标准见 [review-checklist.md](./review-checklist.md)）
+
+注意：**提交者不需要也不应该上传 ZIP**。ZIP 由维护者在你合并后统一打包，保证用户下载的内容与审核过的源码一致。
 
 ---
 
@@ -57,11 +59,15 @@ Cyrene 昔涟官方插件收录仓库：开发者通过 Pull Request 提交插�
 
 ```text
 Cyrene-Plugins/
-├── plugins/              # 已收录插件（每个子目录一个插件，可直接安装）
+├── plugins/              # 已收录插件源码（每个子目录一个插件，可在线阅读）
 │   └── <插件id>/
 │       ├── manifest.json # 插件清单
 │       ├── index.cjs     # 编译后的入口
 │       └── README.md     # 插件说明
+├── zips/                 # 可直接导入的安装包（维护者从 plugins/ 统一打包）
+│   └── <插件id>-<版本>.zip
+├── scripts/
+│   └── build-zips.ps1    # 打包脚本（维护者工具：合并 PR 后重新生成全部 ZIP）
 ├── registry.json         # 收录索引（插件元数据登记处）
 ├── CONTRIBUTING.md       # 提交规范（面向插件开发者）
 └── review-checklist.md   # 审核清单（面向维护者，也可供提交者自查）

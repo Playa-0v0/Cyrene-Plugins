@@ -23,6 +23,7 @@ plugins/
 3. **manifest 必须通过校验**：用 SDK 自带的 `validateManifest` 校验（见下文「开发流程」第 3 步）
 4. **目录名 = manifest 的 `id`**：全小写连字符，如 `weather-tool`
 5. **单插件单 PR**：一个 PR 只收录一个插件；已有插件的版本更新也单独提 PR
+6. **不要上传 ZIP**：`zips/` 由维护者在合并后从审核过的源码统一打包，提交者上传的 ZIP 不会被采用
 
 ---
 
@@ -46,7 +47,7 @@ mv index.js index.cjs
 ```
 
 完整开发教程：[插件开发指南](https://github.com/Playa-0v0/Cyrene-Agent/blob/master/docs/plugins/plugin-dev-guide.md)
-接口规范：[plugin-authoring.md](https://github.com/Playa0v0/Cyrene-Agent/blob/master/docs/plugins/plugin-authoring.md)
+接口规范：[plugin-authoring.md](https://github.com/Playa-0v0/Cyrene-Agent/blob/master/docs/plugins/plugin-authoring.md)
 
 ---
 
@@ -93,6 +94,6 @@ mv index.js index.cjs
 
 ## 五、版本更新
 
-- 已收录插件发新版：更新插件目录内产物 + `manifest.json` 的 `version` + `registry.json` 对应条目
+- 已收录插件发新版：更新插件目录内产物 + `manifest.json` 的 `version` + `registry.json` 对应条目（ZIP 由维护者重新打包）
 - version 必须递增（SemVer），同名同版本不可重复收录
 - 行为有破坏性变化（配置格式、工具参数变更）请在 README 顶部的更新说明中写清迁移方法

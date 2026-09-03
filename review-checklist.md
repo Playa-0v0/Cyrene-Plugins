@@ -10,6 +10,7 @@
 - [ ] 目录内只有：`manifest.json` + 入口文件（`index.cjs`/`index.js`/`index.mjs`）+ `README.md` + 可选 `icon`，没有源码工程文件
 - [ ] `registry.json` 已登记该插件，字段与 manifest 一致（id、name、version、description、author、deps）
 - [ ] 单插件单 PR
+- [ ] 提交者未上传 ZIP（ZIP 一律由维护者从审核过的源码打包）
 
 ---
 
@@ -51,6 +52,17 @@
 
 - [ ] README 说清：功能、启用方式、配置项、网络/存储行为
 - [ ] 有已知限制或风险时如实披露
+
+---
+
+## 七、收录流程（维护者）
+
+审核通过合并后：
+
+1. 在仓库根目录执行 `powershell -ExecutionPolicy Bypass -File scripts/build-zips.ps1`，重新生成全部 ZIP
+2. 核对 `zips/<插件id>-<版本>.zip` 与 `plugins/<插件id>/` 内容一致
+3. 更新 `registry.json` 各条目的 `zip` 字段与 `updatedAt`
+4. 将 ZIP 与索引变更一并提交
 
 ---
 

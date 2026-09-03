@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./cyrene-image.png" width="160" alt="Cyrene-Plugins" />
+</p>
+
 # Cyrene-Plugins
 
 Cyrene 昔涟官方插件收录仓库：开发者通过 Pull Request 提交插件，审核通过后收录进本仓库，供用户下载安装。

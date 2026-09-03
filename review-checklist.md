@@ -7,8 +7,9 @@
 ## 一、结构检查
 
 - [ ] 目录名与 `manifest.json` 的 `id` 一致，全小写连字符
-- [ ] 目录内只有：`manifest.json` + 入口文件（`index.cjs`/`index.js`/`index.mjs`）+ `README.md` + 可选 `icon`，没有源码工程文件
+- [ ] 目录内只有：`manifest.json` + 入口文件（`index.cjs`/`index.js`/`index.mjs`）+ `README.md` + 插件自带资源（如 `ui.html`、图片等，需在 PR 里说明用途），没有源码工程文件
 - [ ] `registry.json` 已登记该插件，字段与 manifest 一致（id、name、version、description、author、deps）
+- [ ] README「已收录插件」表格已添加（或更新）对应行，版本与简介和 manifest 一致
 - [ ] 单插件单 PR
 - [ ] 提交者未上传 ZIP（ZIP 一律由维护者从审核过的源码打包）
 
@@ -61,7 +62,7 @@
 
 1. 在仓库根目录执行 `powershell -ExecutionPolicy Bypass -File scripts/build-zips.ps1`，重新生成全部 ZIP
 2. 核对 `zips/<插件id>-<版本>.zip` 与 `plugins/<插件id>/` 内容一致
-3. 更新 `registry.json` 各条目的 `zip` 字段与 `updatedAt`
+3. 更新 `registry.json` 各条目的 `zip` 字段与 `updatedAt`，并补全 README「已收录插件」表格该行「直接下载」列的 ZIP 链接
 4. 将 ZIP 与索引变更一并提交
 
 ---

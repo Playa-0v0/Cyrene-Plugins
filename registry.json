@@ -41,6 +41,16 @@
       "deps": ["speech-input"],
       "zip": "zips/local-asr-contract-0.1.0.zip",
       "homepage": "https://github.com/Playa-0v0/Cyrene-Agent/tree/master/examples/local-asr-contract"
+    },
+    {
+      "id": "system-status",
+      "name": "系统状态",
+      "version": "0.1.0",
+      "description": "查询本机系统状态：CPU、内存、磁盘、电池与开机时长",
+      "author": "Playa",
+      "deps": [],
+      "zip": "zips/system-status-0.1.0.zip",
+      "homepage": "https://github.com/Playa-0v0/Cyrene-Plugins/tree/main/plugins/system-status"
     }
   ]
 }

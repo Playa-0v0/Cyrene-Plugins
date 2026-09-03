@@ -10,12 +10,13 @@ Cyrene 昔涟官方插件收录仓库：开发者通过 Pull Request 提交插�
 
 ## 已收录插件
 
-| 插件 | 版本 | 简介 | 直接下载 |
-| --- | --- | --- | --- |
-| [weather-tool](./plugins/weather-tool) | 0.1.0 | 查询城市天气：优先使用用户配置的 OpenWeather 密钥，未配置时自动降级到免密钥的 Open-Meteo | [ZIP](./zips/weather-tool-0.1.0.zip) |
-| [long-term-memory](./plugins/long-term-memory) | 0.1.0 | 监听轮次结束事件，自动摘要对话并存档，把长期记忆注入下一轮上下文 | [ZIP](./zips/long-term-memory-0.1.0.zip) |
-| [scheduled-automation](./plugins/scheduled-automation) | 0.1.0 | 通过对话创建、管理自己的定时任务（创建后需在宿主界面确认启用） | [ZIP](./zips/scheduled-automation-0.1.0.zip) |
-| [local-asr-contract](./plugins/local-asr-contract) | 0.1.0 | 本地语音识别契约示例：演示语音输入租约的获取、提交与释放 | [ZIP](./zips/local-asr-contract-0.1.0.zip) |
+| 插件 | 版本 | 简介 | 直接下载 | 开发者 |
+| --- | --- | --- | --- | --- |
+| [weather-tool](./plugins/weather-tool) | 0.1.0 | 查询城市天气：优先使用用户配置的 OpenWeather 密钥，未配置时自动降级到免密钥的 Open-Meteo | [ZIP](./zips/weather-tool-0.1.0.zip) | Cyrene 示例 |
+| [long-term-memory](./plugins/long-term-memory) | 0.1.0 | 监听轮次结束事件，自动摘要对话并存档，把长期记忆注入下一轮上下文 | [ZIP](./zips/long-term-memory-0.1.0.zip) | Cyrene 示例 |
+| [scheduled-automation](./plugins/scheduled-automation) | 0.1.0 | 通过对话创建、管理自己的定时任务（创建后需在宿主界面确认启用） | [ZIP](./zips/scheduled-automation-0.1.0.zip) | Cyrene 示例 |
+| [local-asr-contract](./plugins/local-asr-contract) | 0.1.0 | 本地语音识别契约示例：演示语音输入租约的获取、提交与释放 | [ZIP](./zips/local-asr-contract-0.1.0.zip) | Cyrene 示例 |
+| [system-status](./plugins/system-status) | 0.1.0 | 查询本机系统状态：CPU、内存、磁盘、电池与开机时长，附带可视化状态面板 | [ZIP](./zips/system-status-0.1.0.zip) | Playa |
 
 ---
 
@@ -40,7 +41,7 @@ Cyrene 昔涟官方插件收录仓库：开发者通过 Pull Request 提交插�
 
 1. 用 `npm install @playa0v0/cyrene-plugin-sdk` 开发与测试插件
 2. 把**可直接安装的产物**（`manifest.json` + 编译后的入口文件）放进 `plugins/<你的插件id>/` 目录
-3. 在 `registry.json` 中登记插件信息
+3. 在 `registry.json` 中登记插件信息，并在 README「已收录插件」表格末尾添加一行（详见 [CONTRIBUTING.md](./CONTRIBUTING.md)）
 4. 提交 Pull Request，等待安全审核（审核标准见 [review-checklist.md](./review-checklist.md)）
 
 注意：**提交者不需要也不应该上传 ZIP**。ZIP 由维护者在你合并后统一打包，保证用户下载的内容与审核过的源码一致。
